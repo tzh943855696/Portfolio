@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Yesteryear } from "next/font/google";
 import * as motion from "motion/react-client";
 import "./index.css";
+import Description from "./ui/description";
 
 const yesteryear = Yesteryear({
   weight: "400",
@@ -36,6 +37,7 @@ export default function Home() {
             transition={{
               duration: 0.5,
             }}
+            viewport={{ once: true, amount: 'some' }}
             className="mb-4 text-[1.4rem] md:text-[2rem] relative"
           >
             Hi I'm Locke TENG!👋
@@ -63,6 +65,7 @@ export default function Home() {
               delay: 0.3,
               duration: 0.5,
             }}
+            viewport={{ once: true, amount: 'some' }}
             className="relative "
           >
             Developer 🧑🏻‍💻
@@ -75,6 +78,7 @@ export default function Home() {
               delay: 0.4,
               duration: 0.5,
             }}
+            viewport={{ once: true, amount: 'some' }}
             className="relative "
           >
             INTJ 📚
@@ -88,6 +92,7 @@ export default function Home() {
                 delay: 0.5,
                 duration: 0.5,
               }}
+              viewport={{ once: true, amount: 'some' }}
               className="relative"
             >
               <p>Welcome to my personal page!</p>
@@ -100,6 +105,7 @@ export default function Home() {
                 delay: 0.6,
                 duration: 0.5,
               }}
+              viewport={{ once: true, amount: 'some' }}
               className="relative"
             >
               <p>
@@ -114,6 +120,8 @@ export default function Home() {
             </ul>
           </div>
         </section>
+
+        <Description></Description>
       </main>
     </>
   );
