@@ -2,7 +2,9 @@ import Image from "next/image";
 import { Yesteryear } from "next/font/google";
 import * as motion from "motion/react-client";
 import "./index.css";
-import Description from "./ui/description";
+import Description from "./components/description";
+import ContactList from "./ui/contactList";
+1
 
 const yesteryear = Yesteryear({
   weight: "400",
@@ -29,7 +31,7 @@ export default function Home() {
 
       <div className="fixed inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#fafafa_1px,transparent_1px),linear-gradient(to_bottom,#fafafa_1px,transparent_1px)] bg-[size:14px_24px]"></div>
 
-      <main className="container">
+      <main className="container overflow-x-hidden lg:px-28">
         <section className="my-8 flex flex-col justify-center items-center">
           <motion.h1
             initial={{ opacity: 0, translateY: 30 }}
@@ -114,11 +116,12 @@ export default function Home() {
             </motion.div>
           </div>
 
-          <div className="my-8">
-            <ul>
-              <li></li>
-            </ul>
-          </div>
+          
+        <div className="my-8">
+          <ContactList />
+        </div>
+
+
         </section>
 
         <Description></Description>
