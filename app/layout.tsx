@@ -3,7 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 
 const montserrat = Montserrat({
-  weight: '600',
+  weight: 'variable',
   display: 'fallback',
   subsets: ['cyrillic']
 })
