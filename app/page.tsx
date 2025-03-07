@@ -4,7 +4,7 @@ import * as motion from "motion/react-client";
 import "./index.css";
 import Description from "./components/description";
 import ContactList from "./ui/contactList";
-1
+import Skills from "./components/skills";
 
 const yesteryear = Yesteryear({
   weight: "400",
@@ -111,7 +111,7 @@ export default function Home() {
               className="relative"
             >
               <p>
-                Just a ✨ Front-End developer who loves to build something cool.
+                Just a <b>✨ Front-End developer</b> who loves to build something cool.
               </p>
             </motion.div>
           </div>
@@ -120,11 +120,11 @@ export default function Home() {
         <div className="my-8">
           <ContactList />
         </div>
-
-
         </section>
 
         <Description></Description>
+
+        <Skills></Skills>
       </main>
     </>
   );
