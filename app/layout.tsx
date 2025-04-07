@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
+import { Yesteryear } from "next/font/google";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -7,6 +8,11 @@ const montserrat = Montserrat({
   display: 'fallback',
   subsets: ['cyrillic']
 })
+
+const yesteryear = Yesteryear({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -27,6 +33,22 @@ export default function RootLayout({
       <body
         className={`${montserrat.className} antialiased`}
       >
+          <div className="fixed inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#fafafa_1px,transparent_1px),linear-gradient(to_bottom,#fafafa_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+              <nav className="justify-centerpy-2 flex w-full select-none pt-6 font-light md:px-28 md:pb-2">
+                <div className="container flex flex-col items-center justify-between md:flex-row">
+                  <div className={`text-2xl drop-shadow-2xl ${yesteryear.className}`}>
+                    <a href="/web/20241130224736mp_/https://www.erichuang.art/">
+                      Locke Teng
+                    </a>
+                  </div>
+                  <div className="nav-links flex gap-x-8 text-xs md:text-base">
+                    <span className="cursor-pointer">About</span>
+                    <span className="cursor-pointer">Skills</span>
+                    <span className="cursor-pointer">Blogs</span>
+                    <span className="cursor-pointer">Contact</span>
+                  </div>
+                </div>
+              </nav>
         {children}
       </body>
     </html>
