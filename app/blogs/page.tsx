@@ -1,7 +1,10 @@
+import { allPosts } from 'content-collections'
 export default function BlogList() {
     return (
-        <>
-        123
-        </>
+        {allPosts.map((post) => (
+            <li key={post.slug}>
+                {post.title}
+            </li>
+          ))}
     )
 }
