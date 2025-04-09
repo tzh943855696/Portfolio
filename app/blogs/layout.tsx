@@ -6,9 +6,9 @@ export default function BlogLayout({
 }>) {
   return (
     <>
-        <div className="container bg-blue md:px-28 md:pb-2 my-8">
+      <div className="my-8 px-4 md:px-28 md:pb-2 ">
             {children}
-        </div> 
+      </div> 
     </>
   );
 }

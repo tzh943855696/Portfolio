@@ -14,7 +14,7 @@ const yesteryear = Yesteryear({
 export default function Home() {
   return (
     <>
-      <main className="container overflow-x-hidden lg:px-28">
+      <main className="container  lg:px-28">
         <section className="my-8 flex flex-col justify-center items-center">
           <motion.h1
             initial={{ opacity: 0, translateY: 30 }}
