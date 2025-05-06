@@ -14,7 +14,8 @@ const yesteryear = Yesteryear({
 export default function Home() {
   return (
     <>
-      <main className="container  lg:px-28">
+      <div className="fixed inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#fafafa_1px,transparent_1px),linear-gradient(to_bottom,#fafafa_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+      <main className="container  lg:px-28" id="about">
         <section className="my-8 flex flex-col justify-center items-center">
           <motion.h1
             initial={{ opacity: 0, translateY: 30 }}

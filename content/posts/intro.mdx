@@ -188,6 +188,46 @@ rss: {
 npm run generate-rss
 ```
 
+```javascript
+export const SearchOptions = z.object({
+  q: z.string(),
+  order: z.enum(["asc", "desc"]).optional(),
+  page: z.number().min(1).optional(),
+  per_page: z.number().min(1).max(100).optional(),
+});
+
+export const SearchIssuesOptions = SearchOptions.extend({
+  sort: z.enum([
+    "comments",
+    ...
+  ]).optional(),
+});
+
+export async function searchUsers(params: z.infer<typeof SearchUsersSchema>) {
+  return githubRequest(buildUrl("https://api.github.com/search/users", params));
+}
+
+export const SearchRepositoriesSchema = z.object({
+  query: z.string().describe("Search query (see GitHub search syntax)"),
+  page: z.number().optional().describe("Page number for pagination (default: 1)"),
+  perPage: z.number().optional().describe("Number of results per page (default: 30, max: 100)"),
+});
+
+export async function searchRepositories(
+  query: string,
+  page: number = 1,
+  perPage: number = 30
+) {
+  const url = new URL("https://api.github.com/search/repositories");
+  url.searchParams.append("q", query);
+  url.searchParams.append("page", page.toString());
+  url.searchParams.append("per_page", perPage.toString());
+
+  const response = await githubRequest(url.toString());
+  return GitHubSearchResponseSchema.parse(response);
+}
+```
+
 ## 5. 如何生成 Sitemap
 
 修改 scripts/generate-sitemap.js 文件中的配置，然后运行：
