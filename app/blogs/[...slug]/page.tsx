@@ -8,6 +8,7 @@ import rehypeKatex from 'rehype-katex'
 import rehypeHighlight from 'rehype-highlight';
 import rehypeSlug from 'rehype-slug';
 import 'highlight.js/styles/atom-one-dark.min.css'
+import 'katex/dist/katex.min.css'
 
 type BlogsPageProps = {
   params: Promise<{ slug: string[] }>;
@@ -16,7 +17,7 @@ type BlogsPageProps = {
 
 const options = {
     mdxOptions: {
-        remarkPlugins: [remarkGfm, remarkMath],
+        remarkPlugins: [remarkMath,remarkGfm],
         rehypePlugins: [
           rehypeKatex,
           rehypeHighlight,
