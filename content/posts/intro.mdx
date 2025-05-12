@@ -1,5 +1,5 @@
 ---
-title: Velit dolor 
+title: 滚动动画 
 date: 2025-04-05T21:10:00+08:00
 summary: "Minim irure nulla tempor qui do occaecat nostrud ad in. Occaecat cupidatat commodo enim nostrud dolore aute esse magna. Magna ullamco est consectetur aute sunt magna nisi eu. Eiusmod incididunt nisi veniam esse cillum ea ea. Reprehenderit esse sint tempor velit dolor et pariatur enim incididunt commodo eiusmod ipsum aliqua.Incididunt quis non consectetur nisi occaecat sunt officia pariatur ea ullamco. Deserunt sint labore nisi Lorem laborum eu sint cupidatat nostrud adipisicing duis ipsum consectetur. Lorem in proident mollit sit ullamco nulla proident officia in exercitation non. In occaecat ullamco nisi veniam consectetur ex ut culpa. Id et magna quis consectetur ullamco excepteur commodo. Qui labore ipsum quis cupidatat duis duis aute magna ullamco et exercitation excepteur excepteur. Magna incididunt velit adipisicing consectetur tempor commodo est non."
 slug: '234'
@@ -7,18 +7,33 @@ slug: '234'
 
 这是一个 Nextjs 博客模板，本文会介绍这个模板的一些基本用法。
 
-## 1. 如何编写博客
+### 1. 在Body上设置css变量--scroll
 
-这个仓库的博客文件需要放在 `src/content/blog` 目录下，可以是 markdown 文件，也可以是 mdx 文件。
+我们可以直接在 CSS 中实现很多滚动动画，只需要 JavaScript 提供的一点信息：页面滚动了多远。
 
-有以下这些元数据需要用户自行根据需要进行配置：
-
+```typescript
+window.addEventListener('scroll', () => {
+  document.body.style.setProperty('--scroll', window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
+}, false);
+```
+1. 在Body上设置css变量--scroll
+2. 计算滚动进度
+```typescript
+window.pageYOffset / (document.body.offsetHeight - window.innerHeight)
+```
 - `title`: 博客标题
 - `date`: 博客发布日期
 - `updated`: 博客更新日期
 - `keywords`: 博客关键词，优化 SEO
 - `featured`: 是否放在首页
 - `summary`: 博客摘要
+
+{/* // 123 */}
+<iframe height="300" style={{width: '100%'}} scrolling="no" title="Infinite Spinning SVG" src="https://codepen.io/chriscoyier/embed/qBbrwBJ?default-tab=result" frameBorder="no" loading="lazy" allowtransparency="true" allowFullScreen>
+  See the Pen <a href="https://codepen.io/chriscoyier/pen/qBbrwBJ">
+  Infinite Spinning SVG</a> by Chris Coyier  (<a href="https://codepen.io/chriscoyier">@chriscoyier</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 ## 2. 博客配置
 
