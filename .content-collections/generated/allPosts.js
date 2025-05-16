@@ -8,7 +8,7 @@ export default [
     "slug": "intro"
   },
   {
-    "content": "## tailwind响应式布局 \nTailwind是移动优先的响应式设计, 响应式分割分为: 2xl,xl,lg,md,sm,xs\n\n\n## 目录  \n1. [章节一](#章节一)  \n2. [章节二](#章节二)  \n3. [章节三](#章节三)  \n\n\n## 章节一  \n### 子标题  \n- 列表项1  \n- 列表项2  \n  - 子列表项  \n\n> 引用块示例：  \n> 这是一段引用内容。",
+    "content": "## Tailwind响应式布局 \n- Tailwind是移动优先的响应式设计, 响应式分割分为: 2xl,xl,lg,md,sm,xs\n- sm实际上是 `@media (min-width: 640px) {...}`\n- max-lg:bg-red-500 表示在lg以下(包括lg)的屏幕上, 背景颜色为红色(实际上是一种取反)\n- 想要完成在 比md大比lg小的情况下的css样式 需要使用 `md:max-lg:bg-red-500`\n- 也可以自定义分割比值,比如 min-[500px]:max-[800px]:bg-red-500\n- 横竖屏设置\n```html\n// portrait 表示竖屏, landscape 表示横屏\n<div class=\"portrait:bg-red-500 landscape:bg-blue-500\">\n```\n\n## 响应式栅格布局&&移动端等比\n- 响应式栅格系统\n```html\n<div class=\"sm:grid sm:grid-cols-12\">\n  <div class=\"col-span-12 md:col-span-6 lg:col-span-4\">1</div>\n  <div class=\"col-span-12 md:col-span-6 lg:col-span-4\">2</div>\n  <div class=\"col-span-12 md:col-span-6 lg:col-span-4\">3</div>\n</div>\n```\n- 移动端等比缩放\nTailwind采用rem作为单位\n```css\n@layer utilities {\n  .html-font-size {\n    font-size: 4.266667vw;  // 100vw/375px  16px === ?\n  }\n}\n```\n\n\n\n## 目录  \n1. [章节一](#章节一)  \n2. [章节二](#章节二)  \n3. [章节三](#章节三)  \n\n\n## 章节一  \n### 子标题  \n- 列表项1  \n- 列表项2  \n  - 子列表项  \n\n> 引用块示例：  \n> 这是一段引用内容。",
     "title": "Tailwind CSS",
     "date": "2025-04-05T21:10:00+08:00",
     "summary": "Tailwind CSS的学习记录",

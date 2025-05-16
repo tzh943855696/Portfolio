@@ -5,8 +5,37 @@ summary: "Tailwind CSS的学习记录"
 slug: '/test'
 --- 
 
-## tailwind响应式布局 
-Tailwind是移动优先的响应式设计, 响应式分割分为: 2xl,xl,lg,md,sm,xs
+## Tailwind响应式布局 
+- Tailwind是移动优先的响应式设计, 响应式分割分为: 2xl,xl,lg,md,sm,xs
+- sm实际上是 `@media (min-width: 640px) {...}`
+- max-lg:bg-red-500 表示在lg以下(包括lg)的屏幕上, 背景颜色为红色(实际上是一种取反)
+- 想要完成在 比md大比lg小的情况下的css样式 需要使用 `md:max-lg:bg-red-500`
+- 也可以自定义分割比值,比如 min-[500px]:max-[800px]:bg-red-500
+- 横竖屏设置
+```html
+// portrait 表示竖屏, landscape 表示横屏
+<div class="portrait:bg-red-500 landscape:bg-blue-500">
+```
+
+## 响应式栅格布局&&移动端等比
+- 响应式栅格系统
+```html
+<div class="sm:grid sm:grid-cols-12">
+  <div class="col-span-12 md:col-span-6 lg:col-span-4">1</div>
+  <div class="col-span-12 md:col-span-6 lg:col-span-4">2</div>
+  <div class="col-span-12 md:col-span-6 lg:col-span-4">3</div>
+</div>
+```
+- 移动端等比缩放
+Tailwind采用rem作为单位
+```css
+@layer utilities {
+  .html-font-size {
+    font-size: 4.266667vw;  // 100vw/375px  16px === ?
+  }
+}
+```
+
 
 
 ## 目录  
